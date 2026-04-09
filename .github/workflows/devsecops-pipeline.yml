@@ -25,6 +25,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Install Bandit
+        run: pip install bandit
+        
       - name: Static Application Security Testing (SAST) with Bandit
         run: bandit -r app/ -ll -ii
 
