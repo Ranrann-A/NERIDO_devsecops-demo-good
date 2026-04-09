@@ -37,6 +37,9 @@ jobs:
       - name: Software Composition Analysis (SCA) with pip-audit
         run: pip-audit -r requirements.txt
 
+      - name: Install pytest
+        run: pip install pytest
+        
       - name: Run Unit Tests with Pytest
         run: pytest tests/ -v
 
