@@ -27,9 +27,12 @@ jobs:
 
       - name: Install Bandit
         run: pip install bandit
-        
+
       - name: Static Application Security Testing (SAST) with Bandit
         run: bandit -r app/ -ll -ii
+
+      - name: Install pip-audit
+        run: pip install pip-audit 
 
       - name: Software Composition Analysis (SCA) with pip-audit
         run: pip-audit -r requirements.txt
